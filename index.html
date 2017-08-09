@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>Canvas学习</title>
+ </head>
+ <body>
+  
+   <!-- canvas默认情况是没有边框和内容的 -->
+  <canvas id="myCanvas" width="500px" height="500px" style="border:1px solid red;"></canvas>
+ 
+  <!-- Canvas本身是没有绘图能力的，只能在JavaScript中绘制图片 -->
+
+  <img id="scream" src="7.png" alt="图片">
+  <script>
+
+
+	
+    var c = document.getElementById('myCanvas');
+
+	var ctx = c.getContext('2d');
+
+
+	//绘制矩形
+	ctx.fillStyle="#000000";
+
+	ctx.fillRect(0,0,50,50);
+
+	
+	//绘制直线
+	ctx.moveTo(0,55);    //开始位置
+
+	ctx.lineTo(150,150);   //直线结束的位置
+
+	ctx.stroke();       //使用stroke()方法绘制直线
+
+	
+	//绘制圆形
+	ctx.beginPath();
+
+	ctx.arc(95,50,40,0,2*Math.PI);
+
+	ctx.stroke();
+
+
+	//Canvas - 文本
+	ctx.font = "30px Arial"; //定义字体
+
+	ctx.fillText("Hello World",100,350); //fillText(text,x,y)在Canvas中绘制实体文本
+
+	ctx.strokeText("Hello world",300,350);
+
+
+	var c = document.getElementById('myCanvas');
+
+	var ctx = c.getContext("2d");
+
+    ctx.font="30px Arial";     //定义字体
+
+	ctx.fillText("王静",100,450);//fillText(text,x,y)在Canvas中绘制实体文本
+
+	ctx.strokeText("王静",350,450);//strokeText(text,x,y)在Canvas中绘制空文本
+
+	var c = document.getElementById('myCanvas');
+	var ctx = c.getContext('2d');
+
+	//Canvas-线性渐变
+	var grd = ctx.createLinearGradient(0,0,300,0);//createLinearGradient(x,y,x1,y1) 创建线条渐变
+	grd.addColorStop(0,"red");   //指定颜色停止
+	grd.addColorStop(1,'white');
+
+	//填充渐变
+	ctx.fillStyle = grd;     //填充渐变颜色
+	ctx.fillRect(150,0,150,80);//fillRect(x,y,width,height)
+
+
+	//Canvas-图像
+	//把图片放在画布的方法
+	var c = document.getElementById('myCanvas');
+
+	var ctx = c.getContext('2d');
+
+	var img = document.getElementById("scream");
+
+	ctx.drawImage(img,10,10);    //drawImage(image,x,y)
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+	//绘制矩形
+	var c = document.getElementById("myCanvas");
+
+	var ctx = c.getContext('2d');
+	
+	fillStyle = "#000000"; //填充颜色
+
+	fillRect(0,0,50,50);//设置x,y,width,height
+
+	//绘制直线
+	var c = document.getElementById('myCanvas');
+	var ctx = c.getContext('2d');
+	ctx.moveTo(0,0)//开始位置
+	ctx.linear(200,100);//结束位置
+	ctx.stroke();//绘制直线
+	
+
+	//绘制圆形
+	var c = documentElementById("myCanvas");
+	var ctx = c.getContext('2d');
+	ctx.beginPath();
+	ctx.arc(200,200,50,2*Math.PI)//arc(x,y,r,start,stop)    Math.PI表示180度
+
+	//绘制字体
+	var c = document,getElementById('mycanvas');
+
+	var ctx = c.getElement('2d');
+
+	ctx.font = '20px Arial';
+
+	ctx.strokeText('王静',200,200);//空字体
+	ctx.fillText('王静'，200,200)；//实体字体
+
+  </script>
+
+ </body>
+</html>

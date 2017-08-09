@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>实现JQuery的链式调用</title>
+</head>
+<body>
+<script>
+function A(){}
+A.prototype.v = 2;
+A.prototype.set = function(num){
+this.v = num;
+return this;   //将调用的对象返回就可以继续调用该对象里面的方法和对象了，即链式调用
+}
+A.prototype.get = function(){
+alert(this.v);
+return this;
+}
+var B = new A();
+B.get().set(6).get();
+</script>
+</body>
+</html>
